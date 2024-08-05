@@ -1,58 +1,29 @@
-import type { AxiosError } from 'axios';
 import React, { useState } from 'react';
 
-<<<<<<< HEAD
-import { register } from '@/api/hooks/register'; // register API 추가
+import { registerAndLogin } from '@/api/hooks/register'; // 경로 수정
 import KAKAO_LOGO from '@/assets/kakao_logo.svg';
-import { authSessionStorage } from '@/utils/storage';
-
-const SignUpPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
-  const handleSignUp = async () => {
-    if (!email || !password || !confirmPassword) {
-=======
-import { register } from '@/api/hooks/register'; // `register` 함수 가져오기
-import KAKAO_LOGO from '@/assets/kakao_logo.svg';
-import { authSessionStorage } from '@/utils/storage';
 
 const SignUpPage: React.FC = () => {
-  const [id, setId] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
 
   const handleSignUp = async () => {
-    if (!id || !password || !confirmPassword) {
->>>>>>> 9fc38c008ccc8550a44151a08744a569411c2258
+    if (!email || !password || !confirmPassword) {
       alert('모든 필드를 입력해주세요.');
       return;
     }
-
     if (password !== confirmPassword) {
       alert('비밀번호가 일치하지 않습니다.');
       return;
     }
 
     try {
-<<<<<<< HEAD
-      await register(email, password);
-      alert('회원가입 성공!');
-      authSessionStorage.set(email);
-      window.location.replace('/');
+      await registerAndLogin(email, password);
+      alert('회원가입 및 자동 로그인 성공!');
+      window.location.replace('/'); // 메인 페이지로 이동
     } catch (error) {
-      console.error('회원가입 실패:', error);
-      alert('회원가입 실패');
-=======
-      await register(id, password);
-      alert('회원가입 성공!');
-      authSessionStorage.set(id);
-      window.location.replace('/');
-    } catch (error) {
-      const axiosError = error as AxiosError<{ message: string }>;
-      alert(`회원가입 실패: ${axiosError.response?.data?.message || axiosError.message}`);
->>>>>>> 9fc38c008ccc8550a44151a08744a569411c2258
+      alert('회원가입 실패: ' + (error as Error).message);
     }
   };
 
@@ -107,3 +78,4 @@ const SignUpPage: React.FC = () => {
 };
 
 export default SignUpPage;
+
