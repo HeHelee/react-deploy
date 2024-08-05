@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-deploy/static/css/main.689b7bff.css",
-    "main.js": "/react-deploy/static/js/main.8d04201e.js",
+    "main.js": "/react-deploy/static/js/main.a395b7f3.js",
     "static/media/kakao_logo.svg": "/react-deploy/static/media/kakao_logo.60e99555125ae4c4b8f23f6c5faee9ec.svg",
     "index.html": "/react-deploy/index.html",
     "main.689b7bff.css.map": "/react-deploy/static/css/main.689b7bff.css.map",
-    "main.8d04201e.js.map": "/react-deploy/static/js/main.8d04201e.js.map"
+    "main.a395b7f3.js.map": "/react-deploy/static/js/main.a395b7f3.js.map"
   },
   "entrypoints": [
     "static/css/main.689b7bff.css",
-    "static/js/main.8d04201e.js"
+    "static/js/main.a395b7f3.js"
   ]
 }
