@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My App</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kakao Tech</title>
 </head>
 <body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <script type="text/javascript">
     // GitHub Pages의 모든 404 요청을 index.html로 리디렉션
-    if (location.pathname !== "/") {
-      location.replace("/?" + location.pathname.substr(1));
+    if (location.pathname !== "/" && location.pathname !== "/index.html") {
+      location.replace("/react-deploy?" + location.pathname.substr(1));
     }
   </script>
   <script src="bundle.js"></script>
