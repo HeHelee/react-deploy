@@ -81,7 +81,7 @@ export const useRemoveWish = (
     onSuccess: () => {
       console.log('Item successfully removed, invalidating and refetching wishList');
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.WISH_LIST] });
-      queryClient.refetchQueries({ queryKey: [QUERY_KEYS.WISH_LIST] }); // 쿼리를 강제로 다시 페치합니다
+      queryClient.refetchQueries({ queryKey: [QUERY_KEYS.WISH_LIST] });
     },
     ...options,
   });
