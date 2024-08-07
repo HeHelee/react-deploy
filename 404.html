@@ -3,23 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-  <script type="text/javascript">
-    (function() {
-      var origin = window.location.origin;
-      var pathname = window.location.pathname;
-      var search = window.location.search;
-      var hash = window.location.hash;
-
-      if (pathname.endsWith('/')) {
-        pathname = pathname.slice(0, -1);
-      }
-
-      var redirectUrl = origin + '/react-deploy' + pathname + search + hash;
-      window.location.replace(redirectUrl);
-    })();
-  </script>
+  <title>My App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="root"></div>
+  <script type="text/javascript">
+    // GitHub Pages의 모든 404 요청을 index.html로 리디렉션
+    if (location.pathname !== "/") {
+      location.replace("/?" + location.pathname.substr(1));
+    }
+  </script>
+  <script src="bundle.js"></script>
 </body>
 </html>
