@@ -1,9 +1,6 @@
-import { StarIcon } from '@chakra-ui/icons';
-import { Divider, IconButton } from '@chakra-ui/react';
+import { Divider } from '@chakra-ui/react';
 import styled from '@emotion/styled';
-import axios from 'axios'; // axios 임포트
 
-import { useAddWish } from '@/api/hooks/fetchWishList';
 import { useGetProductDetail } from '@/api/hooks/useGetProductDetail';
 import { Button } from '@/components/common/Button';
 import { Spacing } from '@/components/common/layouts/Spacing';
@@ -16,30 +13,11 @@ import { CashReceiptFields } from '../Fields/CashReceiptFields';
 type Props = {
   orderHistory: OrderHistory;
 };
-
 export const OrderFormOrderInfo = ({ orderHistory }: Props) => {
   const { id, count } = orderHistory;
 
   const { data: detail } = useGetProductDetail({ productId: id.toString() });
   const totalPrice = detail.price * count;
-
-  const addWish = useAddWish();
-
-  const handleAddToFavorites = () => {
-    addWish.mutate(id, {
-      onSuccess: () => {
-        alert('관심 상품으로 추가되었습니다!');
-      },
-      onError: (error) => {
-        if (axios.isAxiosError(error)) {
-          console.error('관심 상품 추가 중 오류 발생:', error.response?.data || error.message);
-        } else {
-          console.error('관심 상품 추가 중 오류 발생:', error.message);
-        }
-        alert('관심 상품 추가 중 오류가 발생했습니다.');
-      },
-    });
-  };
 
   return (
     <Wrapper>
@@ -55,15 +33,6 @@ export const OrderFormOrderInfo = ({ orderHistory }: Props) => {
       </ItemWrapper>
       <Divider color="#ededed" />
       <Spacing height={32} />
-      <IconButton
-        icon={<StarIcon />}
-        aria-label="Add to favorites"
-        variant="outline"
-        colorScheme="red"
-        isRound
-        mb={4}
-        onClick={handleAddToFavorites}
-      />
       <Button type="submit">{totalPrice}원 결제하기</Button>
     </Wrapper>
   );

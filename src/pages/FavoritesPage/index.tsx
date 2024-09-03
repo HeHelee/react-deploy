@@ -11,6 +11,7 @@ import {
   Text,
   useToast,
 } from '@chakra-ui/react';
+import { useQueryClient } from '@tanstack/react-query';
 import type { AxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -19,8 +20,15 @@ import { useRemoveWish, useWishList } from '@/api/hooks/fetchWishList';
 
 const FavoritesPage = () => {
   const [page, setPage] = useState(0);
-  const { data, error, isLoading } = useWishList(page);
-  const removeWish = useRemoveWish();
+  const queryClient = useQueryClient();
+  const { data, error, isLoading, refetch } = useWishList(page, 10);
+  const removeWish = useRemoveWish({
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['wishList'] });
+      refetch(); // 데이터 강제 다시 가져오기
+    },
+  });
+
   const [wishList, setWishList] = useState<WishItem[]>([]);
   const toast = useToast();
 
@@ -43,6 +51,10 @@ const FavoritesPage = () => {
             duration: 3000,
             isClosable: true,
           });
+          // 데이터를 강제로 다시 가져옴
+          console.log('Invalidating and refetching wishList');
+          queryClient.invalidateQueries({ queryKey: ['wishList'] });
+          queryClient.refetchQueries({ queryKey: ['wishList'] });
         },
         onError: (axiosError: AxiosError) => {
           const message =
@@ -112,6 +124,7 @@ const FavoritesPage = () => {
       </>
     );
   }
+
   return (
     <Box p={5}>
       <Text fontSize="2xl" mb={4}>
