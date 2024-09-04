@@ -1,23 +1,18 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 import { Layout } from '@/components/features/Layout';
-import { CategoryPage } from '@/pages/Category';
-import CategoryAddPage from '@/pages/Category/CategoryAddPage';
-import CategoryEditPage from '@/pages/Category/CategoryEditPage';
 import FavoritesPage from '@/pages/FavoritesPage';
-import { GoodsDetailPage } from '@/pages/Goods/Detail';
-import ProductAddPage from '@/pages/Goods/Detail/ProductAddPage';
-import ProductEditPage from '@/pages/Goods/Detail/ProductEditPage';
 import { HomePage } from '@/pages/Home';
-import { LoginPage } from '@/pages/Login';
 import { MyAccountPage } from '@/pages/MyAccount';
 import { OrderPage } from '@/pages/Order';
-import SignUpPage from '@/pages/SignUp';
 
+import { RouterPath } from '../path';
+import { authRoutes } from './authRoutes';
+import { categoryRoutes } from './categoryRoutes';
 import { PrivateRoute } from './components/PrivateRoute';
-import { RouterPath } from './path';
+import { productRoutes } from './productRoutes';
 
-const router = createBrowserRouter([
+const mainRoutes = [
   {
     path: RouterPath.root,
     element: <Layout />,
@@ -26,30 +21,8 @@ const router = createBrowserRouter([
         path: RouterPath.home,
         element: <HomePage />,
       },
-      {
-        path: RouterPath.category,
-        element: <CategoryPage />,
-      },
-      {
-        path: RouterPath.addProduct,
-        element: <ProductAddPage />,
-      },
-      {
-        path: RouterPath.addCategory,
-        element: <CategoryAddPage />,
-      },
-      {
-        path: RouterPath.editCategory,
-        element: <CategoryEditPage />,
-      },
-      {
-        path: RouterPath.editProduct, // 수정 페이지 라우트 추가
-        element: <ProductEditPage />,
-      },
-      {
-        path: RouterPath.productsDetail,
-        element: <GoodsDetailPage />,
-      },
+      ...categoryRoutes,
+      ...productRoutes,
       {
         path: RouterPath.myAccount,
         element: <PrivateRoute />,
@@ -71,7 +44,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: RouterPath.favorites, // favorites 경로 추가
+        path: RouterPath.favorites,
         element: <PrivateRoute />,
         children: [
           {
@@ -86,15 +59,12 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: RouterPath.login,
-    element: <LoginPage />,
-  },
-  {
-    path: RouterPath.signUp,
-    element: <SignUpPage />,
-  },
-]);
+  ...authRoutes,
+];
+
+const router = createBrowserRouter(mainRoutes, {
+  basename: '/react-deploy',
+});
 
 export const Routes = () => {
   return <RouterProvider router={router} />;

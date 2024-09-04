@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { RouterPath } from '@/routes/path';
+import { RouterPath } from '@/path';
 import type { OrderHistory } from '@/types';
 import { orderHistorySessionStorage } from '@/utils/storage';
 

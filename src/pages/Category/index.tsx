@@ -5,7 +5,7 @@ import { useDeleteCategory } from '@/api/hooks/useDeleteCategory';
 import { CategoryHeroSection } from '@/components/features/Category/CategoryHeroSection';
 import { CategoryProductsSection } from '@/components/features/Category/CategoryProductsSection';
 import { useCurrentCategory } from '@/hooks/useCurrentCategory';
-import { RouterPath } from '@/routes/path';
+import { RouterPath } from '@/path';
 
 export const CategoryPage = () => {
   const { categoryId = '' } = useParams<{ categoryId: string }>();

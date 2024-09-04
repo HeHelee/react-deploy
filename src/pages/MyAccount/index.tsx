@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { Spacing } from '@/components/common/layouts/Spacing';
+import { RouterPath } from '@/path';
 import { useAuth } from '@/provider/Auth';
-import { RouterPath } from '@/routes/path';
 import { authSessionStorage } from '@/utils/storage';
 
 export const MyAccountPage = () => {

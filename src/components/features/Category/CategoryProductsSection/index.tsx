@@ -7,7 +7,7 @@ import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
 import { LoadingView } from '@/components/common/View/LoadingView';
 import { VisibilityLoader } from '@/components/common/VisibilityLoader';
-import { getDynamicPath } from '@/routes/path';
+import { getDynamicPath } from '@/path';
 import { breakpoints } from '@/styles/variants';
 
 type Props = {

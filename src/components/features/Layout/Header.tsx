@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { Container } from '@/components/common/layouts/Container';
+import { getDynamicPath, RouterPath } from '@/path';
 import { useAuth } from '@/provider/Auth';
-import { getDynamicPath, RouterPath } from '@/routes/path';
 
 export const Header = () => {
   const navigate = useNavigate();

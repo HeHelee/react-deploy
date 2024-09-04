@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { authSessionStorage } from '@/utils/storage';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://43.201.17.220:8080';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 
 const initInstance = (axiosConfig: AxiosRequestConfig): AxiosInstance => {
   const instance = axios.create({
@@ -23,13 +23,15 @@ const initInstance = (axiosConfig: AxiosRequestConfig): AxiosInstance => {
     if (token) {
       requestConfig.headers.Authorization = `Bearer ${token}`;
     }
+
     return requestConfig;
   });
 
   instance.interceptors.response.use(
-    (response) => response,
+    (response) => {
+      return response;
+    },
     (error) => {
-      console.error('Error fetching data:', error);
       return Promise.reject(error);
     },
   );
