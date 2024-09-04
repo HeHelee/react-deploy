@@ -1,7 +1,7 @@
 import { Textarea } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
-import { useOrderFormContext } from '@/hooks/useOrderFormContext';
+import { useOrderFormContext } from '@/pages/Order/useOrderFormContext';
 
 export const MessageCardFields = () => {
   const { register } = useOrderFormContext();

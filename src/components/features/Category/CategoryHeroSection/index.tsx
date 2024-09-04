@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 import { Container } from '@/components/common/layouts/Container';
-import { useCurrentCategory } from '@/hooks/useCurrentCategory';
+import { useCurrentCategory } from '@/pages/Category/useCurrentCategory';
 import { breakpoints } from '@/styles/variants';
 import type { CategoryData } from '@/types';
 

@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import type { AxiosError } from 'axios';
 
-import { fetchInstance } from '../instance';
+import { fetchInstance } from '../../instance';
 
 interface UpdateProductRequest {
   name: string;
@@ -19,7 +19,11 @@ const updateProduct = async (productId: string, product: UpdateProductRequest): 
 };
 
 export const useUpdateProduct = () => {
-  return useMutation<void, AxiosError<ErrorResponse>, { productId: string; product: UpdateProductRequest }>({
+  return useMutation<
+    void,
+    AxiosError<ErrorResponse>,
+    { productId: string; product: UpdateProductRequest }
+  >({
     mutationFn: ({ productId, product }) => updateProduct(productId, product),
     onSuccess: () => {
       alert('상품 수정 성공!');

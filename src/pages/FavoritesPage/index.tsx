@@ -15,8 +15,8 @@ import { useQueryClient } from '@tanstack/react-query';
 import type { AxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 
-import type { WishItem } from '@/api/hooks/fetchWishList';
-import { useRemoveWish, useWishList } from '@/api/hooks/fetchWishList';
+import type { WishItem } from '@/api/hooks/wishlist/fetchWishList';
+import { useRemoveWish, useWishList } from '@/api/hooks/wishlist/fetchWishList';
 
 const FavoritesPage = () => {
   const [page, setPage] = useState(0);

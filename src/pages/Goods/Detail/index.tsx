@@ -2,9 +2,9 @@ import { Button, Center, useToast, VStack } from '@chakra-ui/react';
 import type { AxiosError } from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { useAddWish } from '@/api/hooks/fetchWishList';
-import { useDeleteProduct } from '@/api/hooks/useDeleteProduct';
-import type { ProductDetailRequestParams } from '@/api/hooks/useGetProductDetail';
+import { useDeleteProduct } from '@/api/hooks/product/useDeleteProduct';
+import type { ProductDetailRequestParams } from '@/api/hooks/product/useGetProductDetail';
+import { useAddWish } from '@/api/hooks/wishlist/fetchWishList';
 import { AsyncBoundary } from '@/components/common/AsyncBoundary';
 import { SplitLayout } from '@/components/common/layouts/SplitLayout';
 import { LoadingView } from '@/components/common/View/LoadingView';

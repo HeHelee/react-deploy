@@ -1,8 +1,8 @@
-import { Box, Button, Center, Heading, Input, VStack  } from '@chakra-ui/react';
+import { Box, Button, Center, Heading, Input, VStack } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { useUpdateCategory } from '@/api/hooks/useUpdateCategory';
+import { useUpdateCategory } from '@/api/hooks/category/useUpdateCategory';
 import { fetchInstance } from '@/api/instance';
 
 interface Category {
@@ -26,7 +26,7 @@ const CategoryEditPage: React.FC = () => {
         setIsLoading(true);
         setError(null);
         const response = await fetchInstance.get<Category[]>(`/api/categories`);
-        const currentCategory = response.data.find(cat => cat.id.toString() === categoryId);
+        const currentCategory = response.data.find((cat) => cat.id.toString() === categoryId);
         if (currentCategory) {
           setCategory(currentCategory);
         } else {
@@ -60,7 +60,7 @@ const CategoryEditPage: React.FC = () => {
   }
 
   return (
-<Center height="100vh">
+    <Center height="100vh">
       <Box>
         <VStack spacing={4}>
           <Heading size="lg">카테고리 수정</Heading>

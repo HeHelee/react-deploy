@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import type { CategoryData } from '@/types';
 
-import { BASE_URL, fetchInstance } from '../instance';
+import { BASE_URL, fetchInstance } from '../../instance';
 
 export type CategoryResponseData = CategoryData[];
 

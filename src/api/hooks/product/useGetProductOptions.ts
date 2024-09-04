@@ -2,7 +2,7 @@ import { useSuspenseQuery } from '@tanstack/react-query';
 
 import type { ProductOptionsData } from '@/types';
 
-import { BASE_URL, fetchInstance } from '../instance';
+import { BASE_URL, fetchInstance } from '../../instance';
 import type { ProductDetailRequestParams } from './useGetProductDetail';
 
 type Props = ProductDetailRequestParams;

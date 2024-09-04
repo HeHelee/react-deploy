@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { FormProvider, useForm } from 'react-hook-form';
 
-import * as api from '@/api/hooks/useGetProductDetail';
+import * as api from '@/api/hooks/product/useGetProductDetail';
 import type { OrderHistory } from '@/types';
 
 import { OrderForm } from './index';

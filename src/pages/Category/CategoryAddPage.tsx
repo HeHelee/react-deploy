@@ -1,7 +1,7 @@
-import { Box, Button, Center, Heading,Input, VStack } from '@chakra-ui/react';
+import { Box, Button, Center, Heading, Input, VStack } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
-import { useAddCategory } from '@/api/hooks/AddCategory'; 
+import { useAddCategory } from '@/api/hooks/category/useAddCategory';
 
 const CategoryAddPage: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -24,16 +24,8 @@ const CategoryAddPage: React.FC = () => {
       <Box>
         <VStack spacing={4}>
           <Heading size="lg">카테고리 추가</Heading>
-          <Input
-            placeholder="이름"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <Input
-            placeholder="색상"
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
-          />
+          <Input placeholder="이름" value={name} onChange={(e) => setName(e.target.value)} />
+          <Input placeholder="색상" value={color} onChange={(e) => setColor(e.target.value)} />
           <Input
             placeholder="이미지 URL"
             value={imageUrl}

@@ -41,7 +41,6 @@ const initInstance = (axiosConfig: AxiosRequestConfig): AxiosInstance => {
 
 export const fetchInstance = initInstance({});
 
-// BASE_URL 내보내기
 export const BASE_URL = API_URL;
 
 export const setBaseURL = (url: string) => {

@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import {
   type ProductDetailRequestParams,
   useGetProductDetail,
-} from '@/api/hooks/useGetProductDetail';
-import { useGetProductOptions } from '@/api/hooks/useGetProductOptions';
+} from '@/api/hooks/product/useGetProductDetail';
+import { useGetProductOptions } from '@/api/hooks/product/useGetProductOptions';
 import { Button } from '@/components/common/Button';
 import { getDynamicPath, RouterPath } from '@/path';
 import { useAuth } from '@/provider/Auth';

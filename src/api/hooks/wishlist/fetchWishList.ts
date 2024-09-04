@@ -4,11 +4,10 @@ import type { AxiosError } from 'axios';
 
 import { authSessionStorage } from '@/utils/storage';
 
-import { fetchInstance } from '../instance';
+import { fetchInstance } from '../../instance';
 
 const getToken = () => authSessionStorage.get();
 
-// Constants for query keys
 const QUERY_KEYS = {
   WISH_LIST: 'wishList',
 };
@@ -28,7 +27,6 @@ interface WishListResponse {
   };
 }
 
-// Helper function to get authorization headers
 const getAuthHeaders = () => {
   const token = getToken();
   if (!token) throw new Error('토큰이 없습니다.');
@@ -109,4 +107,3 @@ export const useAddWish = (
     ...options,
   });
 };
-

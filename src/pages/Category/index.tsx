@@ -1,11 +1,12 @@
 import { Button, Center, HStack } from '@chakra-ui/react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
-import { useDeleteCategory } from '@/api/hooks/useDeleteCategory';
+import { useDeleteCategory } from '@/api/hooks/category/useDeleteCategory';
 import { CategoryHeroSection } from '@/components/features/Category/CategoryHeroSection';
 import { CategoryProductsSection } from '@/components/features/Category/CategoryProductsSection';
-import { useCurrentCategory } from '@/hooks/useCurrentCategory';
 import { RouterPath } from '@/path';
+
+import { useCurrentCategory } from './useCurrentCategory';
 
 export const CategoryPage = () => {
   const { categoryId = '' } = useParams<{ categoryId: string }>();

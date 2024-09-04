@@ -1,6 +1,6 @@
 import { authSessionStorage } from '@/utils/storage';
 
-import { fetchInstance } from '../instance';
+import { fetchInstance } from '../../instance';
 
 export const login = async (email: string, password: string): Promise<string> => {
   const response = await fetchInstance.post('/api/members/login', { email, password });

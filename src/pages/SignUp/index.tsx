@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { registerAndLogin } from '@/api/hooks/register'; // 경로 수정
+import { registerAndLogin } from '@/api/hooks/auth/register'; // 경로 수정
 import KAKAO_LOGO from '@/assets/kakao_logo.svg';
 
 const SignUpPage: React.FC = () => {

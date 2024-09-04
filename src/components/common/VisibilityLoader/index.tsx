@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import {
   useIntersectionObserver,
   type UseIntersectionObserverProps,
-} from '@/hooks/useIntersectionObserver';
+} from '@/components/common/VisibilityLoader/useIntersectionObserver';
 
 import { Spinner } from '../Spinner';
 

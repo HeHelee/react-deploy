@@ -1,7 +1,7 @@
 import { Button, Center, Input, VStack } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
-import { useAddProduct } from '@/api/hooks/useAddProduct';
+import { useAddProduct } from '@/api/hooks/product/useAddProduct';
 
 const AddProductPage: React.FC = () => {
   const [name, setName] = useState('');

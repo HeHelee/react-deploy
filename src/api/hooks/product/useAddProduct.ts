@@ -3,7 +3,7 @@
 import { useMutation } from '@tanstack/react-query';
 import type { AxiosError } from 'axios';
 
-import { fetchInstance } from '../instance';
+import { fetchInstance } from '../../instance';
 
 interface AddProductRequest {
   name: string;

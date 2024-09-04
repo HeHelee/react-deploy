@@ -2,7 +2,7 @@ import type { UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 import type { AxiosError } from 'axios';
 
-import { fetchInstance } from '../instance';
+import { fetchInstance } from '../../instance';
 
 interface AddCategoryRequest {
   name: string;
@@ -19,7 +19,11 @@ const addCategory = async (category: AddCategoryRequest): Promise<void> => {
   await fetchInstance.post('/api/categories', category);
 };
 
-export const useAddCategory = (): UseMutationResult<void, AxiosError<ErrorResponse>, AddCategoryRequest> => {
+export const useAddCategory = (): UseMutationResult<
+  void,
+  AxiosError<ErrorResponse>,
+  AddCategoryRequest
+> => {
   return useMutation<void, AxiosError<ErrorResponse>, AddCategoryRequest>({
     mutationFn: addCategory,
     onSuccess: () => {
