@@ -39,7 +39,8 @@ export const LoginPage = () => {
   };
 
   const handleSignUp = () => {
-    navigate('/react-deploy/signUp'); // 절대 경로 사용
+    console.log('버튼 클릭됨');
+    navigate('/signUp');
   };
 
   return (

@@ -23,6 +23,7 @@ const mainRoutes = [
       },
       ...categoryRoutes,
       ...productRoutes,
+      ...authRoutes,
       {
         path: RouterPath.myAccount,
         element: <PrivateRoute />,
@@ -59,7 +60,6 @@ const mainRoutes = [
       },
     ],
   },
-  ...authRoutes,
 ];
 
 const router = createBrowserRouter(mainRoutes, {
