@@ -33,6 +33,184 @@
 - **버전 관리** : Git, Github
 - **문서 관리** : Notion
 
+---
+
+### 컴포넌트
+```
+📦src
+ ┣ 📂api
+ ┃ ┣ 📂hooks
+ ┃ ┃ ┣ 📂auth
+ ┃ ┃ ┃ ┣ 📜auth.ts
+ ┃ ┃ ┃ ┣ 📜login.ts
+ ┃ ┃ ┃ ┗ 📜register.ts
+ ┃ ┃ ┣ 📂category
+ ┃ ┃ ┃ ┣ 📜useAddCategory.ts
+ ┃ ┃ ┃ ┣ 📜useDeleteCategory.ts
+ ┃ ┃ ┃ ┣ 📜useGetCategorys.ts
+ ┃ ┃ ┃ ┗ 📜useUpdateCategory.ts
+ ┃ ┃ ┣ 📂product
+ ┃ ┃ ┃ ┣ 📜useAddProduct.ts
+ ┃ ┃ ┃ ┣ 📜useDeleteProduct.tsx
+ ┃ ┃ ┃ ┣ 📜useGetProductDetail.ts
+ ┃ ┃ ┃ ┣ 📜useGetProductOptions.ts
+ ┃ ┃ ┃ ┣ 📜useGetProducts.ts
+ ┃ ┃ ┃ ┗ 📜useUpdateProduct.ts
+ ┃ ┃ ┗ 📂wishlist
+ ┃ ┃ ┃ ┗ 📜fetchWishList.ts
+ ┃ ┗ 📂instance
+ ┃ ┃ ┗ 📜index.ts
+ ┣ 📂assets
+ ┃ ┗ 📜kakao_logo.svg
+ ┣ 📂components
+ ┃ ┣ 📂common
+ ┃ ┃ ┣ 📂AsyncBoundary
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂Button
+ ┃ ┃ ┃ ┣ 📜index.stories.tsx
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂Form
+ ┃ ┃ ┃ ┗ 📂Input
+ ┃ ┃ ┃ ┃ ┣ 📜UnderlineTextField.stories.tsx
+ ┃ ┃ ┃ ┃ ┗ 📜UnderlineTextField.tsx
+ ┃ ┃ ┣ 📂GoodsItem
+ ┃ ┃ ┃ ┣ 📜Default.stories.tsx
+ ┃ ┃ ┃ ┣ 📜Default.tsx
+ ┃ ┃ ┃ ┣ 📜Ranking.stories.tsx
+ ┃ ┃ ┃ ┗ 📜Ranking.tsx
+ ┃ ┃ ┣ 📂Image
+ ┃ ┃ ┃ ┣ 📜index.stories.tsx
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂layouts
+ ┃ ┃ ┃ ┣ 📂Container
+ ┃ ┃ ┃ ┃ ┣ 📜index.stories.tsx
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┣ 📂Grid
+ ┃ ┃ ┃ ┃ ┣ 📜index.stories.tsx
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┣ 📂Spacing
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┗ 📂SplitLayout
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂Spinner
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂View
+ ┃ ┃ ┃ ┗ 📜LoadingView.tsx
+ ┃ ┃ ┗ 📂VisibilityLoader
+ ┃ ┃ ┃ ┣ 📜index.tsx
+ ┃ ┃ ┃ ┗ 📜useIntersectionObserver.ts
+ ┃ ┗ 📂features
+ ┃ ┃ ┣ 📂Category
+ ┃ ┃ ┃ ┣ 📂CategoryHeroSection
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┗ 📂CategoryProductsSection
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂Goods
+ ┃ ┃ ┃ ┗ 📂Detail
+ ┃ ┃ ┃ ┃ ┣ 📂OptionItem
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜CountOptionItem.tsx
+ ┃ ┃ ┃ ┃ ┣ 📜Header.tsx
+ ┃ ┃ ┃ ┃ ┣ 📜index.tsx
+ ┃ ┃ ┃ ┃ ┗ 📜OptionSection.tsx
+ ┃ ┃ ┣ 📂Home
+ ┃ ┃ ┃ ┣ 📂AiDiscoveryBanner
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┣ 📂CategorySection
+ ┃ ┃ ┃ ┃ ┣ 📜CategoryItem.tsx
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┗ 📂SelectFriendsBanner
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂Layout
+ ┃ ┃ ┃ ┣ 📜Footer.tsx
+ ┃ ┃ ┃ ┣ 📜Header.tsx
+ ┃ ┃ ┃ ┣ 📜index.tsx
+ ┃ ┃ ┃ ┗ 📜ScrollToTop.tsx
+ ┃ ┃ ┗ 📂Order
+ ┃ ┃ ┃ ┗ 📂OrderForm
+ ┃ ┃ ┃ ┃ ┣ 📂Common
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜HeadingText.tsx
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜LabelText.tsx
+ ┃ ┃ ┃ ┃ ┣ 📂Fields
+ ┃ ┃ ┃ ┃ ┃ ┣ 📜CashReceiptFields.tsx
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜MessageCardFields.tsx
+ ┃ ┃ ┃ ┃ ┣ 📂GoodsInfo
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┃ ┣ 📂MessageCard
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┃ ┣ 📂OrderInfo
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┃ ┣ 📜index.tsx
+ ┃ ┃ ┃ ┃ ┗ 📜Order.test.tsx
+ ┣ 📂pages
+ ┃ ┣ 📂Category
+ ┃ ┃ ┣ 📜CategoryAddPage.tsx
+ ┃ ┃ ┣ 📜CategoryEditPage.tsx
+ ┃ ┃ ┣ 📜index.tsx
+ ┃ ┃ ┗ 📜useCurrentCategory.ts
+ ┃ ┣ 📂FavoritesPage
+ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂Goods
+ ┃ ┃ ┗ 📂Detail
+ ┃ ┃ ┃ ┣ 📜index.test.tsx
+ ┃ ┃ ┃ ┣ 📜index.tsx
+ ┃ ┃ ┃ ┣ 📜ProductAddPage.tsx
+ ┃ ┃ ┃ ┗ 📜ProductEditPage.tsx
+ ┃ ┣ 📂Home
+ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂Login
+ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂MyAccount
+ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂Order
+ ┃ ┃ ┣ 📜index.tsx
+ ┃ ┃ ┣ 📜useHandleOrderHistory.ts
+ ┃ ┃ ┗ 📜useOrderFormContext.ts
+ ┃ ┗ 📂SignUp
+ ┃ ┃ ┗ 📜index.tsx
+ ┣ 📂path
+ ┃ ┣ 📜authPaths.ts
+ ┃ ┣ 📜authRoutes.ts
+ ┃ ┣ 📜categoryPaths.ts
+ ┃ ┣ 📜categoryRoutes.ts
+ ┃ ┣ 📜index.ts
+ ┃ ┣ 📜productPaths.ts
+ ┃ ┗ 📜productRoutes.ts
+ ┣ 📂provider
+ ┃ ┗ 📂Auth
+ ┃ ┃ ┗ 📜index.tsx
+ ┣ 📂routes
+ ┃ ┣ 📂components
+ ┃ ┃ ┗ 📜PrivateRoute.tsx
+ ┃ ┣ 📜authRoutes.tsx
+ ┃ ┣ 📜categoryRoutes.tsx
+ ┃ ┣ 📜index.tsx
+ ┃ ┗ 📜productRoutes.tsx
+ ┣ 📂styles
+ ┃ ┣ 📂variants
+ ┃ ┃ ┗ 📜index.ts
+ ┃ ┣ 📜index.ts
+ ┃ ┗ 📜reset.css
+ ┣ 📂types
+ ┃ ┗ 📜index.ts
+ ┣ 📂utils
+ ┃ ┗ 📂storage
+ ┃ ┃ ┣ 📜index.test.ts
+ ┃ ┃ ┗ 📜index.ts
+ ┣ 📜App.tsx
+ ┣ 📜index.tsx
+ ┗ 📜react-app-env.d.ts
+```
+
+## 회고
+### @구희원
+
+- **기획부터 배포까지** : 웹이 전체적으로 돌아가는 흐름을 배울 수 있어서 뜻깊었던 프로젝트 였습니다. step1 때 배웠던 Ts, React의 기초지식만으로 컴포넌트 설계 방법, Context API를 이용하여 전역으로 상태 관리하는 법, Reat Query를 이용해 비동기적 데이터를 처리하는 방법을 배울 수 있어서 뜻깊었습니다. 또한 마지막 6주차 때에는 BE팀과 함께 협업을 했는데 이때 BE팀이 만들어주신 API 명세서를 바탕으로 앤드포인트를 수정하고 서버를 직접 연결함으로써 웹 사이트를 github page로 배포할 수 있어서 좋았습니다.
+- **주기적인 코드 리팩토링 작업** : 저는 클론 코딩 프로젝트가 끝난 이후에도 리팩토링을 진행했습니다. 특히 파일 구조가 복잡해서 비슷한 기능이 모여있는 폴더로 다시 옮겼고, 또한 코드가 모듈화 될 필요가 있는 작업들을 살폈습니다. 그리고 ErrorBoundary와 Suspense를 이용하여 오류 처리하려고 노력했고, 상위 컴포넌트에서 오류처리가 되었는데 하위 컴포넌트에서도 이를 실행함으로써 불필요하다고 느꼈습니다. 그래서 상위 컴포넌트에서만 에러 처리를 하도록 리팩토링 작업을 진행하고 있습니다.
+- **다음 프로젝트에서의 자신감** : 현재 저는 step2를 마치고 다음 프로젝트를 실행하기 위해 노력하고 있습니다. 또한 교내 순한 버스의 노선도가 업데이트 되어 이를 리팩토링 해보려 합니다. 
+
+
+ 
+
   
 
   
