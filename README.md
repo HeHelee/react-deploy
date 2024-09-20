@@ -37,169 +37,85 @@
 
 ### 컴포넌트
 ```
-📦src
- ┣ 📂api
- ┃ ┣ 📂hooks
- ┃ ┃ ┣ 📂auth
- ┃ ┃ ┃ ┣ 📜auth.ts
- ┃ ┃ ┃ ┣ 📜login.ts
- ┃ ┃ ┃ ┗ 📜register.ts
- ┃ ┃ ┣ 📂category
- ┃ ┃ ┃ ┣ 📜useAddCategory.ts
- ┃ ┃ ┃ ┣ 📜useDeleteCategory.ts
- ┃ ┃ ┃ ┣ 📜useGetCategorys.ts
- ┃ ┃ ┃ ┗ 📜useUpdateCategory.ts
- ┃ ┃ ┣ 📂product
- ┃ ┃ ┃ ┣ 📜useAddProduct.ts
- ┃ ┃ ┃ ┣ 📜useDeleteProduct.tsx
- ┃ ┃ ┃ ┣ 📜useGetProductDetail.ts
- ┃ ┃ ┃ ┣ 📜useGetProductOptions.ts
- ┃ ┃ ┃ ┣ 📜useGetProducts.ts
- ┃ ┃ ┃ ┗ 📜useUpdateProduct.ts
- ┃ ┃ ┗ 📂wishlist
- ┃ ┃ ┃ ┗ 📜fetchWishList.ts
- ┃ ┗ 📂instance
- ┃ ┃ ┗ 📜index.ts
- ┣ 📂assets
- ┃ ┗ 📜kakao_logo.svg
- ┣ 📂components
- ┃ ┣ 📂common
- ┃ ┃ ┣ 📂AsyncBoundary
- ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┣ 📂Button
- ┃ ┃ ┃ ┣ 📜index.stories.tsx
- ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┣ 📂Form
- ┃ ┃ ┃ ┗ 📂Input
- ┃ ┃ ┃ ┃ ┣ 📜UnderlineTextField.stories.tsx
- ┃ ┃ ┃ ┃ ┗ 📜UnderlineTextField.tsx
- ┃ ┃ ┣ 📂GoodsItem
- ┃ ┃ ┃ ┣ 📜Default.stories.tsx
- ┃ ┃ ┃ ┣ 📜Default.tsx
- ┃ ┃ ┃ ┣ 📜Ranking.stories.tsx
- ┃ ┃ ┃ ┗ 📜Ranking.tsx
- ┃ ┃ ┣ 📂Image
- ┃ ┃ ┃ ┣ 📜index.stories.tsx
- ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┣ 📂layouts
- ┃ ┃ ┃ ┣ 📂Container
- ┃ ┃ ┃ ┃ ┣ 📜index.stories.tsx
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┃ ┣ 📂Grid
- ┃ ┃ ┃ ┃ ┣ 📜index.stories.tsx
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┃ ┣ 📂Spacing
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┃ ┗ 📂SplitLayout
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┣ 📂Spinner
- ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┣ 📂View
- ┃ ┃ ┃ ┗ 📜LoadingView.tsx
- ┃ ┃ ┗ 📂VisibilityLoader
- ┃ ┃ ┃ ┣ 📜index.tsx
- ┃ ┃ ┃ ┗ 📜useIntersectionObserver.ts
- ┃ ┗ 📂features
- ┃ ┃ ┣ 📂Category
- ┃ ┃ ┃ ┣ 📂CategoryHeroSection
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┃ ┗ 📂CategoryProductsSection
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┣ 📂Goods
- ┃ ┃ ┃ ┗ 📂Detail
- ┃ ┃ ┃ ┃ ┣ 📂OptionItem
- ┃ ┃ ┃ ┃ ┃ ┗ 📜CountOptionItem.tsx
- ┃ ┃ ┃ ┃ ┣ 📜Header.tsx
- ┃ ┃ ┃ ┃ ┣ 📜index.tsx
- ┃ ┃ ┃ ┃ ┗ 📜OptionSection.tsx
- ┃ ┃ ┣ 📂Home
- ┃ ┃ ┃ ┣ 📂AiDiscoveryBanner
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┃ ┣ 📂CategorySection
- ┃ ┃ ┃ ┃ ┣ 📜CategoryItem.tsx
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┃ ┗ 📂SelectFriendsBanner
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┣ 📂Layout
- ┃ ┃ ┃ ┣ 📜Footer.tsx
- ┃ ┃ ┃ ┣ 📜Header.tsx
- ┃ ┃ ┃ ┣ 📜index.tsx
- ┃ ┃ ┃ ┗ 📜ScrollToTop.tsx
- ┃ ┃ ┗ 📂Order
- ┃ ┃ ┃ ┗ 📂OrderForm
- ┃ ┃ ┃ ┃ ┣ 📂Common
- ┃ ┃ ┃ ┃ ┃ ┣ 📜HeadingText.tsx
- ┃ ┃ ┃ ┃ ┃ ┗ 📜LabelText.tsx
- ┃ ┃ ┃ ┃ ┣ 📂Fields
- ┃ ┃ ┃ ┃ ┃ ┣ 📜CashReceiptFields.tsx
- ┃ ┃ ┃ ┃ ┃ ┗ 📜MessageCardFields.tsx
- ┃ ┃ ┃ ┃ ┣ 📂GoodsInfo
- ┃ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┃ ┃ ┣ 📂MessageCard
- ┃ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┃ ┃ ┣ 📂OrderInfo
- ┃ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
- ┃ ┃ ┃ ┃ ┣ 📜index.tsx
- ┃ ┃ ┃ ┃ ┗ 📜Order.test.tsx
- ┣ 📂pages
- ┃ ┣ 📂Category
- ┃ ┃ ┣ 📜CategoryAddPage.tsx
- ┃ ┃ ┣ 📜CategoryEditPage.tsx
- ┃ ┃ ┣ 📜index.tsx
- ┃ ┃ ┗ 📜useCurrentCategory.ts
- ┃ ┣ 📂FavoritesPage
+📦components
+ ┣ 📂common
+ ┃ ┣ 📂AsyncBoundary
  ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂Button
+ ┃ ┃ ┣ 📜index.stories.tsx
+ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂Form
+ ┃ ┃ ┗ 📂Input
+ ┃ ┃ ┃ ┣ 📜UnderlineTextField.stories.tsx
+ ┃ ┃ ┃ ┗ 📜UnderlineTextField.tsx
+ ┃ ┣ 📂GoodsItem
+ ┃ ┃ ┣ 📜Default.stories.tsx
+ ┃ ┃ ┣ 📜Default.tsx
+ ┃ ┃ ┣ 📜Ranking.stories.tsx
+ ┃ ┃ ┗ 📜Ranking.tsx
+ ┃ ┣ 📂Image
+ ┃ ┃ ┣ 📜index.stories.tsx
+ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂layouts
+ ┃ ┃ ┣ 📂Container
+ ┃ ┃ ┃ ┣ 📜index.stories.tsx
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂Grid
+ ┃ ┃ ┃ ┣ 📜index.stories.tsx
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂Spacing
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂SplitLayout
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂Spinner
+ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂View
+ ┃ ┃ ┗ 📜LoadingView.tsx
+ ┃ ┗ 📂VisibilityLoader
+ ┃ ┃ ┣ 📜index.tsx
+ ┃ ┃ ┗ 📜useIntersectionObserver.ts
+ ┗ 📂features
+ ┃ ┣ 📂Category
+ ┃ ┃ ┣ 📂CategoryHeroSection
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂CategoryProductsSection
+ ┃ ┃ ┃ ┗ 📜index.tsx
  ┃ ┣ 📂Goods
  ┃ ┃ ┗ 📂Detail
- ┃ ┃ ┃ ┣ 📜index.test.tsx
+ ┃ ┃ ┃ ┣ 📂OptionItem
+ ┃ ┃ ┃ ┃ ┗ 📜CountOptionItem.tsx
+ ┃ ┃ ┃ ┣ 📜Header.tsx
  ┃ ┃ ┃ ┣ 📜index.tsx
- ┃ ┃ ┃ ┣ 📜ProductAddPage.tsx
- ┃ ┃ ┃ ┗ 📜ProductEditPage.tsx
+ ┃ ┃ ┃ ┗ 📜OptionSection.tsx
  ┃ ┣ 📂Home
- ┃ ┃ ┗ 📜index.tsx
- ┃ ┣ 📂Login
- ┃ ┃ ┗ 📜index.tsx
- ┃ ┣ 📂MyAccount
- ┃ ┃ ┗ 📜index.tsx
- ┃ ┣ 📂Order
+ ┃ ┃ ┣ 📂AiDiscoveryBanner
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂CategorySection
+ ┃ ┃ ┃ ┣ 📜CategoryItem.tsx
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂SelectFriendsBanner
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂Layout
+ ┃ ┃ ┣ 📜Footer.tsx
+ ┃ ┃ ┣ 📜Header.tsx
  ┃ ┃ ┣ 📜index.tsx
- ┃ ┃ ┣ 📜useHandleOrderHistory.ts
- ┃ ┃ ┗ 📜useOrderFormContext.ts
- ┃ ┗ 📂SignUp
- ┃ ┃ ┗ 📜index.tsx
- ┣ 📂path
- ┃ ┣ 📜authPaths.ts
- ┃ ┣ 📜authRoutes.ts
- ┃ ┣ 📜categoryPaths.ts
- ┃ ┣ 📜categoryRoutes.ts
- ┃ ┣ 📜index.ts
- ┃ ┣ 📜productPaths.ts
- ┃ ┗ 📜productRoutes.ts
- ┣ 📂provider
- ┃ ┗ 📂Auth
- ┃ ┃ ┗ 📜index.tsx
- ┣ 📂routes
- ┃ ┣ 📂components
- ┃ ┃ ┗ 📜PrivateRoute.tsx
- ┃ ┣ 📜authRoutes.tsx
- ┃ ┣ 📜categoryRoutes.tsx
- ┃ ┣ 📜index.tsx
- ┃ ┗ 📜productRoutes.tsx
- ┣ 📂styles
- ┃ ┣ 📂variants
- ┃ ┃ ┗ 📜index.ts
- ┃ ┣ 📜index.ts
- ┃ ┗ 📜reset.css
- ┣ 📂types
- ┃ ┗ 📜index.ts
- ┣ 📂utils
- ┃ ┗ 📂storage
- ┃ ┃ ┣ 📜index.test.ts
- ┃ ┃ ┗ 📜index.ts
- ┣ 📜App.tsx
- ┣ 📜index.tsx
- ┗ 📜react-app-env.d.ts
-```
+ ┃ ┃ ┗ 📜ScrollToTop.tsx
+ ┃ ┗ 📂Order
+ ┃ ┃ ┗ 📂OrderForm
+ ┃ ┃ ┃ ┣ 📂Common
+ ┃ ┃ ┃ ┃ ┣ 📜HeadingText.tsx
+ ┃ ┃ ┃ ┃ ┗ 📜LabelText.tsx
+ ┃ ┃ ┃ ┣ 📂Fields
+ ┃ ┃ ┃ ┃ ┣ 📜CashReceiptFields.tsx
+ ┃ ┃ ┃ ┃ ┗ 📜MessageCardFields.tsx
+ ┃ ┃ ┃ ┣ 📂GoodsInfo
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┣ 📂MessageCard
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┣ 📂OrderInfo
+ ┃ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┃ ┣ 📜index.tsx
+ ┃ ┃ ┃ ┗ 📜Order.test.tsx
 
 ## 회고
 ### @구희원
